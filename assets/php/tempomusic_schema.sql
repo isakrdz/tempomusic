@@ -1,5 +1,4 @@
--- Base de datos para el proyecto Tempo_Final
--- Importar este archivo en phpMyAdmin o usar mysql CLI
+-- Base de datos para el proyecto Tempo_Final, esto sirve para importar desde otros equipos
 
 CREATE DATABASE IF NOT EXISTS `tempomusic` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `tempomusic`;
