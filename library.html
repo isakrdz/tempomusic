@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tempo - Biblioteca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/library.css">
+</head>
+
+<body>
+
+
+    <div class="sidebar d-flex flex-lg-column flex-row justify-content-around align-items-center">
+        <img src="resources/music logo.png" alt="Descripción de la imagen" width="40" height="40">
+        <a href="home.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Inicio"><i class="fas fa-home"></i></a>
+        <a href="search.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Buscar"><i class="fas fa-search"></i></a>
+        <a href="library.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Libreria"><i class="fas fa-book active"></i></a>
+        <a href="favoritos.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Favoritos"><i class="fas fa-heart"></i></a>
+        <a href="user.html"><i class="fas fa-user" data-bs-toggle="tooltip" data-bs-placement="top" title="Usuario"></i></a>
+    </div>
+
+
+    <div class="content" style="margin-bottom: 150px;">
+
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="mb-0">Tu Biblioteca</h3>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-bell me-3" id="notiBell" style="cursor:pointer;"></i>
+                <a href="user.html"><img id="profileIcon" src="resources/userimg.jpg" class="rounded-circle im" alt="User" style="width:40px;height:40px;object-fit:cover;position:static;"/></a>
+      </div>
+        </div>
+
+        <h4>Playlists</h4>
+        <div class="row row-cols-2 row-cols-md-6 g-3 mb-4">
+            <div class="col">
+                <div class="card card-custom">
+                    <a href="gym.html"><img src="resources/GYM.jpg" class="playlist-img" alt="..."></a>
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Para el Gym</h6>
+                        <p class="card-text text-muted">Hardcore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <img src="resources/chill.jpeg" class="playlist-img" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Chill</h6>
+                        <p class="card-text text-muted">Relax</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <img src="resources/party.jpeg" class="playlist-img" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Party</h6>
+                        <p class="card-text text-muted">Pop</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <img src="resources/rock.jpg" class="playlist-img" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Rock</h6>
+                        <p class="card-text text-muted">10's</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <img src="resources/indie.jpg" class="playlist-img" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Indie</h6>
+                        <p class="card-text text-muted">Alternativo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <img src="resources/cine.jpeg" class="playlist-img" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Favoritos</h6>
+                        <p class="card-text text-muted">Tus canciones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4>Álbumes</h4>
+        <div class="row row-cols-2 row-cols-md-6 g-3 mb-4">
+            <div class="col">
+                <div class="card card-custom">
+                    <a href="trench.html"><img src="resources/trench.jpg" class="playlist-img" alt="..."></a>
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Trench</h6>
+                        <p class="card-text text-muted">twenty one pilots</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <img src="resources/fwn.jpeg" class="playlist-img" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Favourite Worst N.</h6>
+                        <p class="card-text text-muted">Arctic Monkeys</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <a href="clancy.html"><img src="resources/clancy.jpg" class="playlist-img" alt="..."></a>
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Clancy</h6>
+                        <p class="card-text text-muted">twenty one pilots</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <a href="TNA.html"><img src="resources/tna.jpg" class="playlist-img" alt="..."></a>
+                    <div class="card-body">
+                        <h6 class="card-title text-white">The New Abnormal</h6>
+                        <p class="card-text text-muted">The Strokes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <a href="mutemath.html"><img src="resources/mutemath.jpeg" class="playlist-img" alt="..."></a>
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Mutemath</h6>
+                        <p class="card-text text-muted">Mutemath</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom">
+                    <a href="certified.html"><img src="resources/certified.jpg" class="playlist-img" alt="..."></a>
+                    <div class="card-body">
+                        <h6 class="card-title text-white">Certified Lover Boy</h6>
+                        <p class="card-text text-muted">Drake</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+           <h4>Artistas favoritos</h4>
+    <div id="artistasCarousel" class="carousel slide mb-4 " data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row row-cols-1 row-cols-lg-6 g-3 justify-content-center">
+            <div class="col">
+              <div class="card card-custom text-center p-3">
+                <a href="top.html"><img src="artistas/top.jpg" class="artist-img mx-auto mb-2" alt="twenty one pilots"></a>
+                <h6 class="card-title text-white">twenty one pilots</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-lg-6 g-3 justify-content-center">
+            <div class="col">
+              <div class="card card-custom text-center p-3">
+                <a href="TS.html"><img src="artistas/thestrokes.webp" class="artist-img mx-auto mb-2" alt="The Strokes"></a>
+                <h6 class="card-title text-white">The Strokes</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-lg-6 g-3 justify-content-center">
+            <div class="col">
+              <div class="card card-custom text-center p-3">
+                <a href="LP.html"><img src="artistas/linkinpark.svg" class="artist-img mx-auto mb-2" alt="Linkin Park"></a>
+                <h6 class="card-title text-white">Linkin Park</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agrega más slides por artista -->
+        <!-- Slide 4 -->
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-lg-6 g-3 justify-content-center">
+            <div class="col">
+              <div class="card card-custom text-center p-3">
+                <img src="artistas/dcfc.webp" class="artist-img mx-auto mb-2" alt="Death Cab for Cutie">
+                <h6 class="card-title text-white">Death Cab for Cutie</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-lg-6 g-3 justify-content-center">
+            <div class="col">
+              <div class="card card-custom text-center p-3">
+                <img src="artistas/thekillers.jpeg" class="artist-img mx-auto mb-2" alt="The Killers">
+                <h6 class="card-title text-white">The Killers</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-lg-6 g-3 justify-content-center">
+            <div class="col">
+              <div class="card card-custom text-center p-3">
+                <a href="MM.html"><img src="resources/MM.jpg" class="artist-img mx-auto mb-2" alt="MM"></a>
+                <h6 class="card-title text-white">Mutemath</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Controles del carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#artistasCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#artistasCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  
+    
+    <div class="footer-player">
+        <div class="d-flex align-items-center gap-3">
+            <img src="resources/trench.jpg" class="rounded ip" alt="song" />
+            <div>
+                <div>Levitate</div>
+                <small class="text-muted">twenty one pilots</small>
+            </div>
+        </div>
+    <div class="d-flex align-items-center gap-3" id="footerBtns">
+      <i class="fas fa-backward footer-btn"></i>
+      <i class="fas fa-play footer-btn"></i>
+      <i class="fas fa-forward footer-btn"></i>
+    </div>
+    <div>
+      <i class="fas fa-volume-up footer-btn"></i>
+    </div>
+    </div>
+
+    <div class="modal fade" id="notiModal" tabindex="-1" aria-labelledby="notiModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="notiModalLabel"><i class="fas fa-bell"></i> Notificaciones</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body text-center">
+            Sigue escuchado tus canciones Favoritas.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/notification.js"></script>
+  <script>
+  // Mostrar foto de perfil en la parte superior derecha
+  const usuario = JSON.parse(sessionStorage.getItem('usuarioLogueado'));
+  if(usuario && usuario.profileImg){
+    document.getElementById('profileIcon').src = usuario.profileImg;
+  }
+  // Aplicar colores personalizados
+  const savedBgColor = sessionStorage.getItem('userBgColor');
+  const savedBtnColor = sessionStorage.getItem('userBtnColor');
+  if(savedBgColor){
+    document.body.style.background = savedBgColor;
+    document.querySelectorAll('.modal-content, .profile-card, .stats-card').forEach(card => {
+      card.style.background = savedBgColor;
+    });
+  }
+  if(savedBtnColor){
+    document.querySelectorAll('.btn, .btn-primary, .edit-btn, .edit-btn2').forEach(btn => {
+      btn.style.background = savedBtnColor;
+      btn.style.borderColor = savedBtnColor;
+    });
+    document.querySelectorAll('.logo').forEach(logo => {
+      logo.style.background = savedBtnColor;
+      logo.style.borderColor = savedBtnColor;
+    });
+    document.querySelectorAll('.footer-btn').forEach(btn => {
+      btn.style.color = savedBtnColor;
+    });
+  }
+  </script>
+</body>
+</html>

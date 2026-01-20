@@ -1,0 +1,184 @@
+/* Limitar tamaño de foto de perfil en barra lateral */
+/* Foto de perfil en barra lateral */
+.sidebar img#profileIcon, .sidebar .rounded-circle.im {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: cover !important;
+    position: static !important;
+    margin: 0 !important;
+    left: auto !important;
+    top: auto !important;
+    box-shadow: none !important;
+    z-index: 1 !important;
+}
+body {
+    font-family: 'Spotify Mix', sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+        .sidebar {
+            width: 80px;
+            background-color: #000;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px 10px;
+        }
+        .sidebar a {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            color: #b3b3b3;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            color: white;
+        }
+        .content {
+            margin-left: 100px;
+            padding: 20px;
+            margin-bottom: 100px;
+        }
+        .album-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .album-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px #000a;
+        }
+        .album-info h2 {
+            margin-bottom: 8px;
+        }
+        .album-info .text-muted {
+            font-size: 18px;
+        }
+        .song-list {
+            background: #181818;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 12px #0005;
+        }
+        .song-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #232323;
+        }
+        .song-row:last-child {
+            border-bottom: none;
+        }
+        .song-title {
+            font-weight: 500;
+            font-size: 18px;
+        }
+        .song-actions i {
+            font-size: 22px;
+            color: darkgray;
+            cursor: pointer;
+            margin-left: 18px;
+            transition: color 0.2s;
+        }
+        .song-actions i:hover {
+            color: #fff;
+        }
+        .audio-player {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .footer-player {
+            background-color: #181818;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #333;
+            z-index: 100;
+        }
+        .ip {
+            height: 50px;
+            width: 50px;
+        }
+        .text-muted {
+            color: #b3b3b3 !important;
+        }
+
+        
+@media (max-width: 991.98px) {
+    .sidebar {
+        bottom: 0;
+        top: auto;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        padding: 0 10px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .sidebar a {
+        flex: 1;
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .content {
+        margin-top: 20px;
+        margin-left: 0;
+        margin-bottom: 150px;
+    }
+
+    .album-header
+    {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-player {
+    background-color: #181818;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #333;
+    margin-bottom: 60px;
+    
+    
+}
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        width: 80px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 80px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+    .content {
+        margin-left: 100px;
+        margin-bottom: 0;
+    }
+}

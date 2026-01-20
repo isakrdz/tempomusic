@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>twenty one pilots - Perfil de Artista</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/artist.css">
+
+    <style>
+        .artist-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.568), rgba(30, 30, 30, 0)), url('resources/fondo-top.png') center center/cover no-repeat;
+            color: #fff;
+            padding: 50px 30px 30px 30px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 4px 24px #000a;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="sidebar d-flex flex-lg-column flex-row justify-content-around align-items-center">
+        <img src="resources/music logo.png" alt="Descripción de la imagen" width="40" height="40">
+        <a href="home.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Inicio"><i class="fas fa-home"></i></a>
+        <a href="search.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Buscar"><i class="fas fa-search"></i></a>
+        <a href="library.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Libreria"><i class="fas fa-book"></i></a>
+        <a href="favoritos.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Favoritos"><i class="fas fa-heart"></i></a>
+        <a href="user.html"><i class="fas fa-user" data-bs-toggle="tooltip" data-bs-placement="top" title="Usuario"></i></a>
+    </div>
+
+    <div class="content">
+        <div class="artist-header">
+            <img src="artistas/top.jpeg" class="artist-img" alt="twenty one pilots">
+            <div class="artist-info">
+                <h1>twenty one pilots</h1>
+                <span class="badge bg-warning text-dark"><i class="fas fa-check"></i> Verified Artist</span>
+                <span class="badge bg-secondary">Alternative</span>
+                <div class="stats mt-2">
+                    <span><i class="fas fa-users"></i> 32M oyentes mensuales</span>
+                </div>
+                <div class="artist-actions">
+                    <button class="btn-play" onclick="playPopular()">Reproducir</button>
+                    <button class="btn-follow" onclick="seguirArtista(this)">Seguir</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">Álbumes populares</div>
+        <div class="album-list mb-4" style="max-width:700px;margin:auto;">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <a href="trench.html" style="text-decoration:none;">
+                        <div class="album-card">
+                            <img src="resources/trench.jpg" class="album-img" alt="Trench">
+                            <h5 class="mt-2 text-white">Trench</h5>
+                            <p class="text-muted mb-0">2018</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="clancy.html" style="text-decoration: none;"> 
+                        <div class="album-card">
+                            <img src="resources/clancy.jpg" class="album-img" alt="Clancy">
+                            <h5 class="mt-2 text-white">Clancy</h5>
+                            <p class="text-muted mb-0">2024</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="blurryface.html" style="text-decoration: none;">
+                        <div class="album-card">
+                            <img src="resources/Blurryface.webp" class="album-img" alt="Blurryface">
+                            <h5 class="mt-2 text-white">Blurryface</h5>
+                            <p class="text-muted mb-0">2015</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">Canciones populares</div>
+        <div class="song-list" id="songList">
+            <!-- Canciones generadas por JS -->
+        </div>
+
+        
+        <div class="section-title">Presentaciones en vivo</div>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide mb-5" data-bs-ride="carousel"
+            style="max-width:700px;margin:auto;">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="youtube-iframe" width="560" height="315"
+                            src="https://www.youtube.com/embed/1Pjt_pT_xuc?enablejsapi=1"
+                            title="twenty one pilots: My Blood" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="color: white;">My Blood</h5>
+                        <p style="color: white;">Live Lounge - BBC Radio 1</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="10000">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="youtube-iframe" width="560" height="315"
+                            src="https://www.youtube.com/embed/KfT5qVREqlM?enablejsapi=1"
+                            title="twenty one pilots: Addict With A Pen" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="color: white;">Addict With A Pen</h5>
+                        <p style="color: white;">Live UG Studios</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="10000">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="youtube-iframe" width="560" height="315"
+                            src="https://www.youtube.com/embed/-MPvsxsH5c8?enablejsapi=1"
+                            title="twenty one pilots: The Line" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="color: white;">The Line</h5>
+                        <p style="color: white;">Live At The Game Awards</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="footer-player" id="footerPlayer" style="display:none;">
+        <div class="d-flex align-items-center gap-3">
+            <img src="artistas/top.jpg" class="rounded ip" alt="song" id="footerImg" />
+            <div>
+                <div id="footerTitle">Stressed Out</div>
+                <small class="text-muted" id="footerArtist">twenty one pilots</small>
+            </div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <i class="" id="footerPause" style="cursor:pointer;"></i>
+        </div>
+        <div style="flex:1; margin-left: 10px;">
+            <audio id="footerAudio" class="audio-player" controls style="width:100%;"></audio>
+        </div>
+    </div>
+
+    <script>
+        const topSongs = [
+            { title: "Vignette", src: "albumes/Clancy/06. Vignette.wav", duration: "3:22", img: "resources/clancy.jpg" },
+            { title: "Morph", src: "albumes/Trench/Twenty One Pilots - Morph.mp3", duration: "4:18", img: "resources/trench.jpg" },
+            { title: "Hometown", src: "albumes/BF/Twenty One Pilots - Hometown.mp3", duration: "3:34", img: "resources/Blurryface.webp" },
+            { title: "Bandito", src: "albumes/Trench/Twenty One Pilots - Bandito.mp3", duration: "5:30", img: "resources/trench.jpg" },
+            { title: "Next Semester", src: "albumes/Clancy/02. Next Semester.wav", duration: "4:27", img: "resources/clancy.jpg" },
+            { title: "Levitate", src: "albumes/Trench/twenty one pilots - Levitate.mp3", duration: "2:25", img: "resources/trench.jpg" }
+        ];
+
+        function renderSongs() {
+            const list = document.getElementById('songList');
+            list.innerHTML = topSongs.map((song, idx) => `
+        <div class="song-row" data-index="${idx}">
+            <div class="d-flex align-items-center">
+                <img src="${song.img}" alt="${song.title}" style="width:40px;height:40px;object-fit:cover;border-radius:8px;margin-right:15px;">
+                <span class="song-title">${song.title}</span>
+                <span class="text-muted ms-3">${song.duration}</span>
+            </div>
+            <div class="song-actions">
+                <i class="fas fa-play" onclick="playSong(${idx})" title="Reproducir"></i>
+            </div>
+        </div>
+    `).join('');
+        }
+
+        function playSong(idx) {
+            const song = topSongs[idx];
+            const footer = document.getElementById('footerPlayer');
+            const audio = document.getElementById('footerAudio');
+            document.getElementById('footerTitle').textContent = song.title;
+            document.getElementById('footerArtist').textContent = "twenty one pilots";
+            document.getElementById('footerImg').src = song.img; // Muestra la portada de la canción
+            audio.src = song.src;
+            audio.play();
+            footer.style.display = "flex";
+        }
+
+        function playPopular() {
+            playSong(0);
+        }
+
+        document.getElementById('footerPause').onclick = function () {
+            document.getElementById('footerAudio').pause();
+        };
+
+        function seguirArtista(btn) {
+            btn.textContent = "Siguiendo";
+            btn.style.background = "#ffe259";
+            btn.style.color = "#181818";
+        }
+
+        renderSongs();
+
+        // Pausar videos de YouTube al cambiar de slide
+        const carousel = document.getElementById('carouselExampleDark');
+        function pauseAllVideos() {
+            const iframes = carousel.querySelectorAll('.youtube-iframe');
+            iframes.forEach((iframe) => {
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            });
+        }
+        carousel.addEventListener('slide.bs.carousel', () => {
+            pauseAllVideos();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

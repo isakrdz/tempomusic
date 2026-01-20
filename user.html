@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil de Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/user.css">
+</head>
+
+<body>
+    <div class="sidebar d-flex flex-lg-column flex-row justify-content-around align-items-center">
+        <img src="resources/music logo.png" alt="Descripción de la imagen" width="40" height="40">
+        <a href="home.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Inicio"><i class="fas fa-home"></i></a>
+        <a href="search.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Buscar"><i class="fas fa-search"></i></a>
+        <a href="library.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Libreria"><i class="fas fa-book"></i></a>
+        <a href="favoritos.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Favoritos"><i class="fas fa-heart"></i></a>
+        <a href="user.html"><i class="fas fa-user active" data-bs-toggle="tooltip" data-bs-placement="top" title="Usuario"></i></a>
+    </div>
+
+    <div class="content">
+        <div class="profile-card mx-auto" style="max-width:400px;">
+            <img id="profileIcon" src="resources/userimg.jpg" class="profile-img" alt="Usuario">
+            <h2 class="mb-1" id="nombreUsuario">Usuario</h2>
+            <h2 class="mb-1"><span class="badge-fav"><i class="fas fa-crown"></i> Premium</span></h2>
+            <p class="text-muted mb-2" id="correoUsuario" style="margin-top: 20px;">correo@ejemplo.com</p>
+            <button class="edit-btn" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil">Editar perfil</button>
+            <button class="edit-btn2" onclick="logout()">Log Out</button>
+            <div class="mt-3 d-flex gap-3 align-items-center">
+                <div>
+                    <label for="bgColorPicker" class="form-label">Color de fondo:</label>
+                    <input type="color" id="bgColorPicker" value="#181818" style="width: 40px; height: 40px; border: none;">
+                </div>
+                <div>
+                    <label for="btnColorPicker" class="form-label">Color de botones:</label>
+                    <input type="color" id="btnColorPicker" value="#0099ff" style="width: 40px; height: 40px; border: none;">
+                </div>
+            </div>
+            <button class="edit-btn2 btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleteAccount">Eliminar cuenta</button>
+        </div>
+
+        <!-- Estadísticas y listas (sin cambios) -->
+        <div class="row row-cols-2 mb-4">
+            <div class="col-md-4">
+                <div class="stats-card">
+                    <div class="stats-icon"><i class="fas fa-music"></i></div>
+                    <h5>Playlists</h5>
+                    <a href="library.html" style="color: white;"><p>8 creadas</p></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-card">
+                    <div class="stats-icon"><i class="fas fa-heart"></i></div>
+                    <h5>Favoritos</h5>
+                    <a href="favoritos.html" style="color: white;"><p>Ver más...</p></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-card">
+                    <div class="stats-icon"><i class="fas fa-headphones"></i></div>
+                    <h5>Tiempo escuchado</h5>
+                    <p>124 horas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Listas recientes y artistas favoritos (sin cambios) -->
+        <div class="recent-list">
+            <h4 class="mb-3"><i class="fas fa-history me-2"></i>Escuchado recientemente</h4>
+            <div class="d-flex align-items-center mb-2">
+                <img src="resources/trench.jpg" alt="Trench">
+                <div>
+                    <strong>Levitate</strong> <span class="text-muted">- twenty one pilots</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+                <img src="resources/fwn.jpeg" alt="Favourite Worst Nightmare">
+                <div>
+                    <strong>505</strong> <span class="text-muted">- Arctic Monkeys</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+                <img src="resources/hotfuss.jpeg" alt="Hot Fuss">
+                <div>
+                    <strong>Somebody Told Me</strong> <span class="text-muted">- The Killers</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+                <img src="resources/tna.jpg" alt="The New Abnormal">
+                <div>
+                    <strong>Selfless</strong> <span class="text-muted">- The Strokes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="recent-list">
+            <h4 class="mb-3"><i class="fas fa-users me-2"></i>Artistas favoritos</h4>
+            <div class="d-flex flex-wrap gap-3" style="text-decoration: none;">
+                <a href="top.html"><span class="badge-fav"><i class="fas fa-user"></i> twenty one pilots</span></a>
+                <a href="LP.html"><span class="badge-fav"><i class="fas fa-user"></i> Linkin Park</span></a>
+                <a href="TS.html"><span class="badge-fav"><i class="fas fa-user"></i> The Strokes</span></a>
+                <a href="MM.html"><span class="badge-fav"><i class="fas fa-user"></i> Mutemath</span></a>
+            </div>
+        </div>
+        </div>
+
+            <!-- Modal Eliminar Cuenta -->
+            <div class="modal fade" id="modalDeleteAccount" tabindex="-1" aria-labelledby="modalDeleteAccountLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalDeleteAccountLabel">Eliminar cuenta</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.</p>
+                            <div id="msgDeleteAccount" class="mt-2"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" id="btnConfirmDelete">Eliminar cuenta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+            .modal-content {
+                    background: #181818;
+                    color: #fff;
+                    border-radius: 18px;
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+            }
+            .modal-header, .modal-footer {
+                    border: none;
+            }
+            .form-control, .btn {
+                    border-radius: 12px;
+            }
+            .btn-primary {
+                    background: #0099ff;
+                    border: none;
+            }
+            .btn-secondary {
+                    background: #222;
+                    border: none;
+            }
+            .preview-img {
+                    width: 80px;
+                    height: 80px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    margin-bottom: 10px;
+                    border: 2px solid #0099ff;
+                    background: #222;
+            }
+            #msgEditarPerfil .alert {
+                    border-radius: 10px;
+                    font-size: 0.95em;
+                    margin-top: 8px;
+            }
+            </style>
+            <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="modalEditarPerfilLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="formEditarPerfil" enctype="multipart/form-data">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalEditarPerfilLabel">Editar Perfil</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="d-flex flex-column align-items-center mb-3">
+                                    <img id="previewImg" class="preview-img" src="resources/userimg.jpg" alt="Previsualización">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editName" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="editName" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editImg" class="form-label">Foto de perfil</label>
+                                    <input type="file" class="form-control" id="editImg" name="profileImg" accept="image/*">
+                                </div>
+                                <input type="hidden" id="editEmail" name="email">
+                                <div id="msgEditarPerfil" class="mt-2"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+    <script>
+    // Mostrar datos del usuario
+    var usuario = JSON.parse(sessionStorage.getItem('usuarioLogueado'));
+    if(usuario){
+        document.getElementById('nombreUsuario').textContent = usuario.name;
+        document.getElementById('correoUsuario').textContent = usuario.email;
+        document.getElementById('editName').value = usuario.name;
+        document.getElementById('editEmail').value = usuario.email;
+        // Previsualización inicial de imagen
+        if(usuario.profileImg){
+            document.getElementById('previewImg').src = usuario.profileImg;
+            document.getElementById('profileIcon').src = usuario.profileImg;
+        }
+    } else {
+        window.location.href = "login.html";
+    }
+
+    // Previsualización de imagen al seleccionar archivo
+    document.getElementById('editImg').addEventListener('change', function(e){
+        const file = e.target.files[0];
+        if(file){
+            const reader = new FileReader();
+            reader.onload = function(ev){
+                document.getElementById('previewImg').src = ev.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Editar perfil
+    document.getElementById('formEditarPerfil').addEventListener('submit', function(e){
+        e.preventDefault();
+        const formData = new FormData(this);
+        fetch('/Pagina4/Pagina/assets/php/editarperfil.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            const msg = document.getElementById('msgEditarPerfil');
+            if(data.success){
+                msg.innerHTML = '<div class="alert alert-success">Perfil actualizado</div>';
+                document.getElementById('nombreUsuario').textContent = data.name;
+                usuario.name = data.name;
+                if(data.profileImg){
+                    document.querySelector('.profile-img').src = data.profileImg;
+                    document.getElementById('previewImg').src = data.profileImg;
+                    usuario.profileImg = data.profileImg;
+                }
+                sessionStorage.setItem('usuarioLogueado', JSON.stringify(usuario));
+            }else{
+                msg.innerHTML = '<div class="alert alert-danger">'+(data.message||'Error al actualizar')+'</div>';
+            }
+        })
+        .catch(()=>{
+            document.getElementById('msgEditarPerfil').innerHTML = '<div class="alert alert-danger">Error de conexión</div>';
+        });
+    });
+
+    // Función de logout
+    function logout(){
+        sessionStorage.removeItem('usuarioLogueado');
+        window.location.href = 'login.html';
+    }
+
+    // Personalización de color
+    const bgColorPicker = document.getElementById('bgColorPicker');
+    const btnColorPicker = document.getElementById('btnColorPicker');
+    // Cargar colores guardados
+    const savedBgColor = sessionStorage.getItem('userBgColor');
+    const savedBtnColor = sessionStorage.getItem('userBtnColor');
+    if(savedBgColor){
+        bgColorPicker.value = savedBgColor;
+        document.body.style.background = savedBgColor;
+        document.querySelectorAll('.modal-content, .profile-card, .stats-card').forEach(card => {
+            card.style.background = savedBgColor;
+        });
+    }
+    if(savedBtnColor){
+        btnColorPicker.value = savedBtnColor;
+        document.querySelectorAll('.btn-primary, .edit-btn, .edit-btn2').forEach(btn => {
+            btn.style.background = savedBtnColor;
+            btn.style.borderColor = savedBtnColor;
+        });
+    }
+    bgColorPicker.addEventListener('input', function(){
+        sessionStorage.setItem('userBgColor', bgColorPicker.value);
+        document.body.style.background = bgColorPicker.value;
+        document.querySelectorAll('.modal-content, .profile-card, .stats-card').forEach(card => {
+            card.style.background = bgColorPicker.value;
+        });
+    });
+    btnColorPicker.addEventListener('input', function(){
+        sessionStorage.setItem('userBtnColor', btnColorPicker.value);
+        document.querySelectorAll('.btn-primary, .edit-btn, .edit-btn2').forEach(btn => {
+            btn.style.background = btnColorPicker.value;
+            btn.style.borderColor = btnColorPicker.value;
+        });
+    });
+
+    // Eliminar cuenta
+    document.getElementById('btnConfirmDelete').addEventListener('click', function(){
+        const email = usuario.email;
+        fetch('/Pagina4/Pagina/assets/php/delete_account.php', {
+            method: 'POST',
+            body: new URLSearchParams({ email })
+        })
+        .then(res => res.json())
+        .then(data => {
+            const msg = document.getElementById('msgDeleteAccount');
+            if(data.success){
+                msg.innerHTML = '<div class="alert alert-success">Cuenta eliminada correctamente</div>';
+                setTimeout(() => {
+                    sessionStorage.removeItem('usuarioLogueado');
+                    window.location.href = 'index.html';
+                }, 1500);
+            }else{
+                msg.innerHTML = '<div class="alert alert-danger">'+(data.message||'No se pudo eliminar la cuenta')+'</div>';
+            }
+        })
+        .catch(()=>{
+            document.getElementById('msgDeleteAccount').innerHTML = '<div class="alert alert-danger">Error de conexión</div>';
+        });
+    });
+    </script>
+    <script>
+        // Mostrar datos del usuario
+        const usuario = JSON.parse(sessionStorage.getItem('usuarioLogueado'));
+
+        if(usuario){
+            document.getElementById('nombreUsuario').textContent = usuario.name;
+            document.getElementById('correoUsuario').textContent = usuario.email;
+        } else {
+            // Redirigir al login si no hay usuario
+            window.location.href = "login.html";
+        }
+
+        // Función de logout
+        function logout(){
+            sessionStorage.removeItem('usuarioLogueado');
+            window.location.href = 'login.html';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

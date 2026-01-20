@@ -1,0 +1,60 @@
+body {
+    font-family: 'Spotify Mix', sans-serif;
+    background: linear-gradient(135deg, #181818 60%, #232323 100%);
+    color: white;
+    min-height: 100vh;
+}
+
+.login-card {
+    background: #181818;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 24px #000a;
+    max-width: 400px;
+    margin: 60px auto;
+}
+
+.form-control {
+    background-color: #242424;
+    border: none;
+    color: white;
+}
+
+.form-control:focus {
+    background-color: #242424;
+    color: white;
+    box-shadow: none;
+    border-color: #0099dd;
+}
+
+.btn-login {
+    background: #0099dd;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 0;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-login:hover {
+    background: #3fabda;
+}
+
+.logo {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.link-register {
+    color: #0099dd;
+    text-decoration: none;
+}
+
+.link-register:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    border-radius: 20px;
+    font-weight: bold;
+}

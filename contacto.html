@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tempo | Sugerencias Musicales</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  
+
+  <header>
+    <a href="home.html" class="logo">Tempo</a>
+
+    <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="contacto.html" class="active">Sugerencias</a>
+    </nav>
+  </header>
+
+  <section class="home contacto" style="flex-direction: column; text-align: center; margin-top: 120px;">
+    <div class="home-content">
+      <h1>Sugerencias</h1>
+      <h3 class="spam">¿No encuentras tu cancion o album favorito en nuestro catalogo?</h3>
+      <p style="font-size: 1.6rem; max-width: 600px; margin: 2rem auto;">
+        Estamos abiertos a pedidos, dejanos un mensaje y nosotros agregaremos tu cancion o album al catalogo, no te preocupes, lo haremos lo antes posible.
+      </p>
+    </div>
+
+    <form action="https://formspree.io/f/xyzndjqa" method="POST" target="_blank" style="display: flex; flex-direction: column; gap: 1.5rem; width: 90%; max-width: 500px; margin-top: -70px; font-family: 'Spotify Mix', sans-serif;">
+      <input type="text" name="name" placeholder="Tu nombre" required style="padding: 1rem; border-radius: 1rem; font-size: 1.6rem;">
+      <input type="email" name="email" placeholder="Tu correo electrónico" required style="padding: 1rem; border-radius: 1rem; font-size: 1.6rem;">
+      <textarea name="message" rows="5" placeholder="Escribe la cancion o album que deseas en nuestro catalogo" required style="padding: 1rem; border-radius: 1rem; font-size: 1.6rem;"></textarea>
+      <button type="submit" class="btn">Enviar sugerencia</button>
+    </form>
+
+  </section>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const nav = document.querySelector('header nav');
+
+        menuIcon.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
