@@ -2,27 +2,112 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Bienvenido a WaveBeat</title>
+  <title>Tempo Music</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#121212;
+      --accent:#0099dd;
+      --muted:#bdbdbd;
+      --white:#ffffff;
+      --card:#0f0f0f;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Spotify Mix', sans-serif;
+      background:var(--bg);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .site-wrap{max-width:1100px;margin:56px auto;padding:32px;position:relative;overflow:visible}
+
+    header{display:flex;align-items:center;justify-content:flex-start;gap:18px;margin-bottom:28px}
+    .logo-circle{width:44px;height:44px;border-radius:50%;background:linear-gradient(180deg,var(--accent),#007bb3);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.6);overflow:hidden}
+    .logo-circle img{width:36px;height:36px;display:block}
+    .brand{font-weight:700;color:var(--white);font-size:18px}
+
+    .hero{display:grid;grid-template-columns:1fr 460px;gap:48px;align-items:center;padding:36px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;overflow:visible}
+
+    .hero-left h1{font-size:48px;line-height:1.02;margin:0 0 18px;font-weight:800}
+    .hero-left h1 .accent{color:var(--accent)}
+    .hero-left p{color:var(--muted);font-size:16px;margin:0 0 28px;max-width:520px}
+
+    .btn-primary-fig{background:var(--accent);border:none;color:white;padding:10px 20px;border-radius:999px;font-weight:600;box-shadow:0 8px 24px rgba(0,153,221,0.12)}
+    .btn-ghost{background:transparent;border:4px solid rgba(255, 255, 255, 0.87);color:var(--white);padding:8px 18px;border-radius:999px;margin-left:12px}
+
+    /* Right mockup */
+    .hero-right{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:visible}
+    .music-notes{position:absolute;top:12px;left:0;right:0;pointer-events:none;opacity:0.14}
+
+    .device-laptop{width:480px;height:auto;background:transparent;border-radius:10px;padding:0;box-shadow:0 20px 50px rgba(0,0,0,0.6);border:0;position:relative;display:flex;align-items:center}
+    .device-laptop img{width:480px;max-width:100%;height:auto;object-fit:contain;border-radius:8px;display:block}
+
+    .device-phone{width:140px;height:auto;background:transparent;border-radius:18px;padding:0;border:0;position:absolute;right:6px;bottom:-8px;box-shadow:0 18px 40px rgba(0,0,0,0.45)}
+    .device-phone img{width:140px;max-width:100%;height:auto;object-fit:contain;border-radius:14px;display:block}
+
+    /* responsiveness */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr 320px}
+      .site-wrap{padding:20px;margin:36px auto}
+    }
+    @media (max-width:720px){
+      .site-wrap{margin:20px 16px}
+      .hero{grid-template-columns:1fr;gap:22px}
+      .hero-right{height:220px}
+      .device-phone{position:static;right:auto;bottom:auto}
+      .hero-left h1{font-size:34px}
+    }
+  </style>
 </head>
 
 <body>
 
-  <div class="stars"></div>
+  <div class="site-wrap">
+    <header>
+      <div class="logo-circle"><img src="resources/7bb366ce24a05059b5fcb4428af7962854d71033.png" alt="Tempo logo"></div>
+      <div class="brand">Tempo Music</div>
+    </header>
 
-  <div class="hero-container">
-    <div class="hero-box">
-      <div class="music-icon">
-        <img src="resources/music logo.png" alt="">
+    <main class="hero" role="main">
+      <div class="hero-left">
+        <h1>Tu música, tu mundo. <br><span class="accent">¡Disfruta el ritmo!</span></h1>
+        <p>Relájate, ponte cómodo y deja que la música haga el resto, nosotros nos encargamos del ambiente.</p>
+        <div style="margin-top:18px">
+          <a href="register.html" class="btn btn-primary-fig">Regístrate</a>
+          <a href="login.html" class="btn btn-ghost">Inicia Sesión</a>
+        </div>
       </div>
-      <h1>Bienvenido a Tempo</h1>
-      <p>Tu universo musical personalizado. Explora, escucha y conéctate con la música que amas.</p>
-      <a href="register.html" class="btn btn-hero mb-3">Crea tu cuenta</a>
-      <p class="text-muted">¿Ya tienes cuenta? <a href="login.html" class="text-white text-decoration-underline">Inicia sesión</a></p>
-    </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <svg class="music-notes" width="520" height="260" viewBox="0 0 520 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 140C120 80 200 120 320 40C360 16 420 40 500 20" stroke="#0099DD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          <g fill="#0099DD">
+            <circle cx="110" cy="115" r="8"/>
+            <circle cx="190" cy="95" r="8"/>
+            <circle cx="290" cy="65" r="8"/>
+          </g>
+        </svg>
+
+        <div class="device-laptop">
+          <img src="resources/8ffb2fa168e39ffc3273255912a06a44900ecdaa.png" alt="Macbook mockup">
+        </div>
+
+        <div class="device-phone">
+          <img src="resources/127579308ebc24ee8f4c8696b53d8b55a9e1711b.png" alt="Phone mockup">
+        </div>
+      </div>
+
+    </main>
   </div>
 
 </body>
